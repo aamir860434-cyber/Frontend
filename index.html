@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff">
+<title>ConnectChat</title><link rel="stylesheet" href="app.css"></head><body data-tab="chats">
+<div id="app">
+ <section class="panes" id="panes">
+  <div class="list">
+   <div class="lh" id="lh" data-t="chats">
+    <span class="lgo" data-i="plane"></span><h2 id="lt">Messages</h2>
+    <div class="lacts">
+     <button id="sbtn" class="ib" title="Search"><span data-i="search"></span></button>
+     <button id="newchat" class="ib" title="Find people"><span data-i="userplus"></span></button>
+     <div class="pw"><button id="meb" class="ib" title="Menu"></button><div id="pmenu" hidden></div></div>
+    </div>
+   </div>
+   <div class="sw" id="sw" hidden><input id="gs" placeholder="Search users or chats..." autocomplete="off"><div id="sres" hidden></div></div>
+   <div id="stories" class="stories" hidden></div><div id="lb"></div>
+  </div>
+  <div class="chat" id="cp"></div>
+ </section>
+ <nav id="nav">
+  <button data-tab="chats" class="on"><span data-i="chats"></span><b>Chats</b><i id="nchats" hidden></i></button>
+  <button data-tab="calls"><span data-i="phone"></span><b>Calls</b><i id="nbell" hidden></i></button>
+  <button id="navstory" hidden><span data-i="storyplus"></span><b>Set Story</b></button>
+  <button data-tab="settings"><span data-i="gear"></span><b>Settings</b></button>
+ </nav>
+ <button id="bell" hidden></button><button id="logout" hidden></button>
+</div>
+<div id="callbox" hidden>
+ <div id="cin" hidden><div id="cin-av"></div><h2 id="cin-name"></h2><p id="cin-type"></p><div class="crow"><button class="cb red" id="c-rej">✖</button><button class="cb green" id="c-acc">✔</button></div></div>
+ <div id="cact" hidden>
+  <video id="rv" autoplay playsinline></video><div id="rav"></div>
+  <video id="lv" autoplay playsinline muted></video>
+  <div class="cinfo"><b id="cname"></b><span id="cstat">Calling…</span></div>
+  <div class="crow"><button class="cb" id="c-mute" title="Mute">🎤</button><button class="cb" id="c-cam" title="Camera">📷</button><button class="cb" id="c-flip" title="Switch camera">🔄</button><button class="cb red" id="c-end" title="End">📞</button></div>
+ </div>
+</div>
+<div id="sv" hidden><div class="svbox"><div id="svbar"></div><div class="svh"><span id="svav"></span><b id="svn"></b><small id="svt"></small><button id="svdel" hidden title="Delete">🗑</button><button id="svx" title="Close">✖</button></div><div id="svc"></div><button class="svp" id="svprev" aria-label="Previous"></button><button class="svn2" id="svnext" aria-label="Next"></button><button id="svviews" hidden></button></div></div>
+<div id="gsp" hidden>
+ <div class="gsbox">
+  <div class="gsh">
+   <button id="gsback" class="ib" title="Back"><span data-i="back"></span></button>
+   <div class="gsbar"><span class="gsi" data-i="search"></span>
+    <input id="gsq" placeholder="Search people, usernames and messages..." autocomplete="off" maxlength="60" enterkeyhint="search">
+    <button id="gsclr" hidden title="Clear"><span data-i="x"></span></button></div>
+  </div>
+  <div class="gstabs" id="gstabs"><button data-f="people" class="on">People</button><button data-f="messages">Messages</button></div>
+  <div id="gsbody"></div>
+ </div>
+</div>
+<dialog id="dlg"></dialog>
+<div id="toast" hidden></div>
+<input type="file" id="file" hidden>
+<script src="/socket.io/socket.io.js"></script><script src="app.js"></script>
+</body></html>
