@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ConnectChat – Login</title><link rel="stylesheet" href="app.css"></head><body class="authbody">
+<div class="authwrap"><div class="authcard">
+ <div class="alogo">✈️</div><h1>ConnectChat</h1><p class="tag">Chat • Connect • Share</p>
+ <div class="tabs"><button data-t="login" class="on">Login</button><button data-t="signup">Sign up</button><button data-t="forgot">Forgot</button></div>
+ <form id="login" class="frm" autocomplete="on">
+  <input id="li-id" placeholder="Username or email" autocomplete="username" required>
+  <input id="li-pw" type="password" placeholder="Password" autocomplete="current-password" required>
+  <input id="li-otp" inputmode="numeric" maxlength="6" placeholder="6 digit OTP sent to your email" hidden>
+  <button class="btn">Login</button>
+ </form>
+ <form id="signup" class="frm" hidden autocomplete="on">
+  <div id="su1" class="frm">
+   <input id="su-name" placeholder="Full name" autocomplete="name" required>
+   <input id="su-user" placeholder="Username (letters, numbers, _ .)" autocomplete="username" required>
+   <input id="su-email" type="email" placeholder="Email (one account per email)" autocomplete="email" required>
+   <input id="su-pw" type="password" placeholder="Password (min 8 characters)" autocomplete="new-password" required>
+   <button class="btn">Send OTP to my email</button>
+  </div>
+  <div id="su2" class="frm" hidden>
+   <p class="note">We sent a 6-digit OTP to your email. Enter it to verify your email and create the account.</p>
+   <input id="su-otp" inputmode="numeric" maxlength="6" placeholder="6 digit OTP">
+   <button class="btn">Verify &amp; create account</button>
+  </div>
+ </form>
+ <form id="forgot" class="frm" hidden>
+  <p class="note">Enter your account email. We will send you a link to set a new password.</p>
+  <input id="fp-email" type="email" placeholder="Your account email" required>
+  <button class="btn">Send reset link</button>
+ </form>
+ <div id="cf" class="cf"></div>
+ <div id="msg" class="msg"></div>
+ <p class="note">New text messages use client-side encryption. Attachments and metadata are not end-to-end encrypted; see the privacy details. <a href="about.html">What we keep</a></p>
+</div></div>
+<script src="captcha.js" data-api="/api/cc"></script>
+<script src="login.js" defer></script></body></html>
