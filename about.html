@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About you – ConnectChat</title><link rel="stylesheet" href="app.css">
+<style>body{background:#eaf1ff}.pg{max-width:760px;margin:0 auto;padding:20px 16px 50px}.pg h1{margin:10px 0}.pg h2{margin:22px 0 8px}.pg li,.pg p{line-height:1.7;color:#27396b}.pg ul{padding-left:20px}.card2{background:#fff;border-radius:18px;padding:18px 22px;box-shadow:0 4px 18px rgba(11,42,107,.08);margin-top:14px}a.b{color:#1f6bff;text-decoration:none;font-weight:600}</style></head><body>
+<div class="pg"><a class="b" href="index.html">← Back to ConnectChat</a>
+<h1>About you: your data on ConnectChat</h1>
+<div class="card2"><h2 style="margin-top:0">📦 What we keep</h2><ul>
+<li><b>Account:</b> your name, username, email address and a salted hash of your password (we never store the password itself and cannot read it).</li>
+<li><b>Profile:</b> bio, profile photo, and your “show online status / last seen” choice.</li>
+<li><b>Messages:</b> message ciphertext for new text messages, older message text that may be plaintext, attachment references, replies, times and delivery/read status.</li>
+<li><b>Calls:</b> who called whom, voice or video, start time, duration and result (answered / missed / declined). The audio and video of a call are <b>not recorded or stored</b>; they go directly between the two devices (or through a relay server if needed).</li>
+<li><b>Contacts:</b> people you add and people you block. Phone contact import and reporting are currently disabled.</li>
+
+<li><b>Notifications:</b> if you allow them, a browser push address so we can notify you. You can switch it off any time.</li>
+<li><b>Short-lived items:</b> OTP codes and password-reset links expire in 10-30 minutes; rate-limit counters expire automatically.</li></ul></div>
+<div class="card2"><h2 style="margin-top:0">🛡️ How your data is protected</h2><ul>
+<li>Connections are protected by HTTPS when the service is deployed behind a correctly configured TLS endpoint.</li>
+<li>Passwords are hashed with scrypt. Login sessions use secure HttpOnly cookies, and changing your password signs out old sessions.</li>
+<li>Signup needs a verified email (OTP), one email can have only one account, and rate limits slow down bots and password guessing; captcha is enabled when the operator configures it.</li>
+<li>New text messages are encrypted on the sender device and decrypted on the recipient device. The current prototype uses first-use key pinning (TOFU), not a fully authenticated Signal-style protocol. A first-contact man-in-the-middle attack is not prevented. Older messages may remain plaintext in the database.</li>
+<li>Blocked users cannot message or call you. Blocking is available in chat settings.</li>
+<li>Security headers and strict origin checks protect the site from hijacking.</li></ul>
+<p><b>Honest limits:</b> only newly sent text messages between E2EE-enabled accounts are encrypted at the application layer. Images, videos, voice notes, documents, profile photos and metadata are <b>not end-to-end encrypted</b> and can be accessed by authorized service/database operators. This cryptographic design has not received an independent audit and must not be treated as equivalent to Signal. Verify a contact key through a separate trusted channel; first-contact MITM protection is not yet provided.</p></div>
+<div class="card2"><h2 style="margin-top:0">✅ Your controls</h2><ul>
+<li>Settings → <b>Clear all chats</b> removes your chat history from your view.</li>
+<li>Settings → <b>Delete my account</b> deletes your account and associated application records and removes your access from other users’ media. Encrypted/offsite backups may remain until their configured retention period ends.</li>
+<li>Settings → <b>Show activity status</b> hides your online status and last seen.</li>
+<li>Questions? Email the site owner shown on the main website.</li></ul></div></div></body></html>
